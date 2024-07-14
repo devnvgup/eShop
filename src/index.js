@@ -11,7 +11,8 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-
+import { StateProvider } from './components/Provider/StateProvider';
+import { reducer, initialState } from './components/Provider/reducer';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <RouterProvider router={router} />
+    </StateProvider>
   </React.StrictMode>
 );
 
