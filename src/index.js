@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import { StateProvider } from './components/Provider/StateProvider';
 import { reducer, initialState } from './components/Provider/reducer';
+import Login from './components/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       <Header />
       <Checkout />
     </>,
+  },
+  {
+    path: "/login",
+    element: <Login />
   },
 ]);
 

@@ -1,8 +1,15 @@
 export const initialState = {
     basket: [],
+    userLogin : false
 }
 
 // Selector
+
+export const getBasketsTotal = (basket) => {
+   return basket?.reduce((total,cur)=>{
+           return total+=cur.price
+    },0)
+}
 
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -15,6 +22,11 @@ export const reducer = (state, action) => {
             return {
                 ...state,
                 basket: state.basket.filter((item)=>item.id !== action.item)
+            }
+        case "USER_LOGIN":
+            return {
+                ...state,
+                userLogin : action.item
             }
         default:
             return state

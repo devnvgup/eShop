@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useReducer } from "react";
 
 export const StateContext = createContext();
-debugger
 
 export const StateProvider = ({ reducer, initialState, children }) => {
     return (
